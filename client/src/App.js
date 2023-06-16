@@ -12,7 +12,10 @@ import RequiredAuth from './components/RequiredAuth';
 import { Routes, Route } from 'react-router-dom';
 import NewsFeedManager from './components/icPage/NewsFeedManager';
 import { useAuthContext } from './hooks/useAuthContext';
-import Profile from './components/Profile'
+import Profile from './components/Profile';
+import ManageDAWorker from './components/admin/ManageDAWorker';
+import ManageFarmer from './components/admin/ManageFarmer';
+import ManageIC from './components/admin/ManageIC';
 
 function App()
 {
@@ -30,17 +33,20 @@ function App()
           <Route path='sign-in' element={<Login />} /> */}
           <Route path='/profile' element={<Profile />} />
           <Route path='/logout' element={<Layout />} />
-          <Route path='sign-in' element={<Login />} />
+          {/* <Route path='sign-in' element={<Login />} /> */}
           <Route path='sign-up' element={<Register />} />
           <Route path='/' element={<Index />} />
           <Route path='news-feed' element={<NewsFeed />} />
           <Route path='agri-jobs' element={<Job />} />
           <Route path='admin/manage-news' element={<NewsFeedManager />} />
-
+            <Route path='admin/ManageDAWorker' element={<ManageDAWorker />} />
+            <Route path='admin/ManageFarmer' element={<ManageFarmer />} />
+            <Route path='admin/ManageIC' element={<ManageIC />} />
           {/* Private Routes */}
           <Route element={<RequiredAuth />}>
             <Route path='news-feed' element={<NewsFeed />} />
             <Route path='agri-pros' element={<Product />} />
+            
              
           </Route>
           
